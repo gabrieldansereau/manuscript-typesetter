@@ -71,7 +71,7 @@ Downloads.download(
     "JuliaMono.zip",
 )
 
-run(`unzip JuliaMono.zip`)
+run(`unzip -n JuliaMono.zip`)
 run(`rm -r webfonts`)
 
 _fonts_dir = ".fonts"
