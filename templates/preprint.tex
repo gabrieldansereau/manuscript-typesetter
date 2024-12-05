@@ -21,7 +21,7 @@ ${ _preprint() }
 {\small
 ${ authors:_render_authors()[, ] }
 \vskip 1em
-${ institutions:_render_institutions()[; ] }\\
+${ institutions:_render_institutions()[\newline] }\\
 ${ if(authorship.equal) }
 ${ authorship.equal:_render_institutions()[; ] }\\
 ${ endif }
