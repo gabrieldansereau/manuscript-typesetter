@@ -19,6 +19,7 @@ for author in authors
             String[
                 "$(affiliation_to_number[affiliation])" for affiliation in author["affiliations"]
             ],
+            by=x -> parse(Int, x)
         )
     delete!(author, "affiliations")
 end
@@ -27,7 +28,7 @@ affiliations = Dict{String, Any}()
 affiliations["authors"] = authors
 affiliations["institutions"] = []
 while ~isempty(affiliation_to_number)
-    id, idx = findmin(collect(values(affiliation_to_number)))
+    id, idx = findmin(x -> parse(Int, x), collect(values(affiliation_to_number)))
     name = collect(keys(affiliation_to_number))[idx]
     delete!(affiliation_to_number, name)
     push!(affiliations["institutions"], Dict(["id" => id, "name" => name]))
