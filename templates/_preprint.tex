@@ -45,9 +45,13 @@
 
 \usepackage{titlesec}
 
-\titleformat{\section}[block]
+\titleformat{name = \section}[block]
 {\normalfont\large\sffamily}
 {\thesection}{.5em}{\titlerule\\[.8ex]\bfseries}
+
+\titleformat{name = \section, numberless}[block]
+{\normalfont\large\sffamily}
+{}{.0em}{\bfseries}
 
 \titleformat{\subsection}[runin]
 {\normalfont\fontseries{b}\selectfont\filright\sffamily}
